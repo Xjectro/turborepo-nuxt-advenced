@@ -1,0 +1,40 @@
+{
+  "name": "@layers/ui",
+  "private": true,
+  "type": "module",
+  "main": "./nuxt.config.ts",
+  "scripts": {
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "format": "prettier --write ./",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-vue-next": "^0.453.0",
+    "nuxt": "^3.13.2",
+    "prettier": "^3.3.3",
+    "radix-vue": "^1.9.7",
+    "tailwind-merge": "^2.5.3",
+    "tailwindcss-animated": "^1.1.2",
+    "tailwindcss-bg-patterns": "^0.3.0",
+    "vaul-vue": "^0.2.0",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@layers/translation": "*",
+    "@layers/utils": "*",
+    "@nuxt/image": "^1.8.1",
+    "@nuxtjs/color-mode": "^3.5.1",
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "@nuxtjs/icon": "^3.0.0-beta.16",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@pinia/nuxt": "^0.5.5",
+    "@vueuse/nuxt": "^11.1.0",
+    "nuxt-lucide-icons": "^1.0.5",
+    "shadcn-nuxt": "^0.10.4"
+  }
+}

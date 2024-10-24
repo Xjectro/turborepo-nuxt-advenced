@@ -1,0 +1,16 @@
+{
+  "ui": {
+    "file": {
+      "fileUpload": {
+        "buttons": {
+          "select": "Resim Seç"
+        },
+        "dialog": {
+          "items": {
+            "uploadImage": "Resim / Gif Yükle"
+          }
+        }
+      }
+    }
+  }
+}

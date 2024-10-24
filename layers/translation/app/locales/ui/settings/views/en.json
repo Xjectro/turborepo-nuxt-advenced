@@ -1,0 +1,126 @@
+{
+  "ui": {
+    "settings": {
+      "views": {
+        "account": {
+          "profile": {
+            "title": "Edit Profile",
+            "inputs": {
+              "username": "Username",
+              "description": "Description",
+              "avatar": {
+                "title": "Profile Picture",
+                "description": "Please upload an image at least 300x300. GIF files are also accepted. Maximum size is 5MB."
+              },
+              "banner": {
+                "title": "Banner Image",
+                "description": "Please upload an image at least 600x350. GIF files are also accepted. Maximum size is 5MB."
+              }
+            },
+            "buttons": {
+              "update": "Save Update"
+            },
+            "messages": {
+              "error": "An error occurred while saving changes!",
+              "success": "Information updated successfully."
+            }
+          },
+          "connections": {
+            "title": "Connections",
+            "buttons": {
+              "connect": "Connect",
+              "update": "Update",
+              "disconnect": "Disconnect"
+            },
+            "items": {
+              "discord": {
+                "label": "Discord Connection",
+                "description": "Connect your account to access Discord-related actions."
+              },
+              "twitch": {
+                "label": "Twitch Connection",
+                "description": "Connect your account to access Twitch-related actions."
+              },
+              "github": {
+                "label": "GitHub Connection",
+                "description": "Connect your account to access GitHub-related actions."
+              }
+            }
+          }
+        },
+        "modification": {
+          "password": {
+            "title": "Change Password",
+            "buttons": {
+              "change": "Change"
+            },
+            "inputs": {
+              "currentPassword": "Current Password",
+              "newPassword": "New Password",
+              "newPasswordAgain": "New Password (Again)"
+            },
+            "messages": {
+              "success": "Your password has been successfully changed.",
+              "error": "An error occurred while changing the password."
+            }
+          },
+          "email": {
+            "title": "Change Email",
+            "buttons": {
+              "change": "Change"
+            },
+            "inputs": {
+              "currentEmail": "Current Email",
+              "newEmail": "New Email",
+              "newEmailAgain": "New Email (Again)"
+            },
+            "messages": {
+              "success": "Your email has been successfully changed.",
+              "error": "An error occurred while changing the email."
+            }
+          }
+        },
+        "app": {
+          "language": {
+            "title": "Language",
+            "buttons": {
+              "change": "Change",
+              "current": "Current"
+            }
+          },
+          "appearance": {
+            "title": "Appearance",
+            "subtitle": "Choose Your Favorite Color",
+            "themes": {
+              "light": "Light",
+              "dark": "Dark"
+            },
+            "colors": {
+              "yellow": "Yellow",
+              "green": "Green",
+              "orange": "Orange",
+              "blue": "Blue",
+              "red": "Red",
+              "purple": "Purple",
+              "pink": "Pink",
+              "gray": "Gray"
+            }
+          }
+        },
+        "auth": {
+          "index": {
+            "title": "Security",
+            "paragraph": "When two-factor authentication is enabled, a verification code will be sent to your email address when you log into your account.",
+            "buttons": {
+              "save": "Save Changes"
+            },
+            "messages": {
+              "success": "Changes have been successfully saved.",
+              "error": "An error occurred while saving the changes!"
+            }
+          }
+        }
+      }
+    }
+  }
+}

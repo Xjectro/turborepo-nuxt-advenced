@@ -1,0 +1,13 @@
+{
+  "name": "@repo/logger",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "devDependencies": {
+    "@repo/typescript-config": "*"
+  },
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}

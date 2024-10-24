@@ -1,0 +1,10 @@
+@import url("./tailwind.css");
+@import url("./color-mode.css");
+
+body {
+  @apply transition-all overflow-x-hidden overflow-y-auto min-h-screen bg-white dark:bg-zinc-950;
+}
+
+body::-webkit-scrollbar {
+  @apply w-0 h-0 hidden;
+}

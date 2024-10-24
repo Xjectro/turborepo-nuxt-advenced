@@ -1,0 +1,31 @@
+{
+  "name": "@layers/utils",
+  "private": true,
+  "type": "module",
+  "main": "./nuxt.config.ts",
+  "scripts": {
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "format": "prettier --write ./",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/types": "^2.18.1",
+    "axios": "^1.7.7",
+    "nuxt": "^3.13.2",
+    "prettier": "^3.3.3",
+    "radix-vue": "^1.9.7",
+    "tailwind-merge": "^2.5.3",
+    "tailwindcss-animated": "^1.1.2",
+    "tailwindcss-bg-patterns": "^0.3.0",
+    "vaul-vue": "^0.2.0",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@vueuse/nuxt": "^11.1.0",
+    "@pinia/nuxt": "^0.5.5",
+    "pinia-plugin-persistedstate": "^4.1.1"
+  }
+}

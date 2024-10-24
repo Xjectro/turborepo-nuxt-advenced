@@ -1,0 +1,16 @@
+{
+  "pages": {
+    "index": {
+      "head": {
+        "settings": {
+          "title": "Settings",
+          "description": "You can change your settings here"
+        },
+        "auth": {
+          "title": "Auth",
+          "description": "You can register or log in here"
+        }
+      }
+    }
+  }
+}

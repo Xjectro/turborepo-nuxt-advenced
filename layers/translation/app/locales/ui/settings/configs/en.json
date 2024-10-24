@@ -1,0 +1,31 @@
+{
+  "ui": {
+    "settings": {
+      "configs": {
+        "leftsideItems": {
+          "account": {
+            "index": "User Settings",
+            "profile": "Edit Profile",
+            "connections": "Connections"
+          },
+          "modification": {
+            "index": "Modifications",
+            "password": "Change Password",
+            "email": "Change Email"
+          },
+          "app": {
+            "index": "App Settings",
+            "appearance": "Appearance",
+            "language": "Language"
+          },
+          "auth": {
+            "index": "Security",
+            "security": "Security",
+            "token": "Token",
+            "logout": "Logout"
+          }
+        }
+      }
+    }
+  }
+}

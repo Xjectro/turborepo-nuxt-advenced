@@ -1,0 +1,13 @@
+{
+  "root": {
+    "remove": {
+      "text": "Remove"
+    },
+    "error": {
+      "title": "Oops, Something Went Wrong!",
+      "buttons": {
+        "homepage": "Return to Homepage"
+      }
+    }
+  }
+}

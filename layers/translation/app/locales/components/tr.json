@@ -1,0 +1,60 @@
+{
+  "components": {
+    "common": {
+      "navigationMenu": {
+        "widgets": {
+          "chatBox": {
+            "title": "Sohbet Kutusu",
+            "description": "Kanalınızın sohbetini akışınıza ekleyin ve bunu yaparken güzel görünmesini sağlayın."
+          }
+        }
+      },
+      "header": {
+        "end": {
+          "login": "Giriş Yap"
+        }
+      },
+      "footer": {
+        "logo": {
+          "description": "Bize katılın ve hayatınızı kolaylaştırın"
+        },
+        "app": {
+          "index": "Uygulama",
+          "appearance": "Görünüm",
+          "language": "Dil"
+        },
+        "user": {
+          "index": "Kullanıcı",
+          "login": "Giriş Yap",
+          "register": "Kayıt Ol"
+        }
+      }
+    },
+    "particles": {
+      "drawerItems": {
+        "common": {
+          "widgets": {
+            "chatBox": "Sohbet Kutusu"
+          }
+        }
+      }
+    },
+    "shared": {
+      "user": {
+        "dropdown": {
+          "buttons": {
+            "settings": "Ayarlar",
+            "logout": "Çıkış Yap"
+          }
+        }
+      },
+      "fontSize": {
+        "select": {
+          "buttons": {
+            "index": "Yazı Boyutu"
+          }
+        }
+      }
+    }
+  }
+}

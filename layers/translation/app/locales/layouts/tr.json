@@ -1,0 +1,19 @@
+{
+  "layouts": {
+    "callback": {
+      "messages": {
+        "loading": "{type} hesabınız {title} ile bağlantı kuruluyor...",
+        "connected": "{type} hesabınız başarıyla {title} ile bağlantı kurdu.",
+        "error": {
+          "connected": "{type} hesabınız {title} ile bağlantı kurarken bir hata oluştu."
+        }
+      },
+      "submessages": {
+        "connected": "Bu pencereyi kapatabilir ve {title} sayfasına geri dönebilirsiniz.",
+        "error": {
+          "connected": "Üzgünüz, bağlantı sırasında bir sorun oluştu. Bu pencereyi kapatıp yeniden deneyebilirsiniz."
+        }
+      }
+    }
+  }
+}

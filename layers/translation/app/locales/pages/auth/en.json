@@ -1,0 +1,91 @@
+{
+  "pages": {
+    "auth": {
+      "login": {
+        "label": "Log In",
+        "sublabel": "Welcome back, it's great to see you!",
+        "inputs": {
+          "email": "Your Email Address",
+          "password": "Your Password"
+        },
+        "buttons": {
+          "check": "Verify Login"
+        },
+        "header": {
+          "text": "Don't Have an Account?",
+          "subtext": "Join {name} today by signing up!"
+        },
+        "messages": {
+          "error": "An error occurred while logging in. Please try again.",
+          "success": "Successfully logged in, welcome back!"
+        },
+        "timeline": {
+          "verify": "Verify that the account belongs to you",
+          "submit": "Log In"
+        }
+      },
+      "register": {
+        "label": "Create an Account",
+        "sublabel": "We hope you have a great time after creating your account!",
+        "inputs": {
+          "email": "Your Email Address",
+          "username": "Your Username",
+          "firstName": "Your First Name",
+          "lastName": "Your Last Name",
+          "password": "Your Password"
+        },
+        "buttons": {
+          "submit": "Sign Up"
+        },
+        "header": {
+          "text": "Already a Member?",
+          "subtext": "Have you joined {name} before? Log in!"
+        },
+        "messages": {
+          "error": "An error occurred during registration. Please try again.",
+          "success": "Account successfully created, welcome aboard!"
+        }
+      },
+      "forgotPassword": {
+        "label": "Forgot Password",
+        "sublabel": "Follow the instructions below to reset your password.",
+        "inputs": {
+          "email": "Your Email Address"
+        },
+        "buttons": {
+          "submit": "Send Reset Link"
+        },
+        "header": {
+          "text": "Remembered Your Password?",
+          "subtext": "Click here to log in."
+        },
+        "messages": {
+          "error": "No account found with this email address. Please check your input.",
+          "success": "Password reset link successfully sent."
+        }
+      },
+      "refreshPassword": {
+        "label": "Reset Your Password",
+        "sublabel": "Set a new password to secure your account.",
+        "inputs": {
+          "password": "Your New Password"
+        },
+        "buttons": {
+          "submit": "Update Password"
+        },
+        "header": {
+          "text": "Remembered Your Password?",
+          "subtext": "Click here to log in."
+        },
+        "messages": {
+          "error": "The reset link is invalid or the new password cannot be the same as the old one.",
+          "success": "Password successfully updated."
+        },
+        "timeline": {
+          "verify": "Verify your identity",
+          "submit": "Reset Your Password"
+        }
+      }
+    }
+  }
+}

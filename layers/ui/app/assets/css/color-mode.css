@@ -1,0 +1,111 @@
+.red-color-mode {
+  --primary-50: 0 100% 97%;
+  --primary-100: 0 100% 94%;
+  --primary-200: 0 96% 89%;
+  --primary-300: 0 91% 82%;
+  --primary-400: 0 88% 73%;
+  --primary-500: 0 85% 62%;
+  --primary-600: 0 83% 53%;
+  --primary-700: 0 78% 44%;
+  --primary-800: 0 81% 36%;
+  --primary-900: 0 72% 30%;
+  --primary-950: 0 85% 15%;
+}
+
+.blue-color-mode {
+  --primary-50: 213 100% 97%;
+  --primary-100: 213 95% 93%;
+  --primary-200: 213 89% 86%;
+  --primary-300: 213 83% 76%;
+  --primary-400: 213 91% 66%;
+  --primary-500: 213 96% 60%;
+  --primary-600: 221 84% 53%;
+  --primary-700: 226 72% 47%;
+  --primary-800: 227 67% 39%;
+  --primary-900: 228 64% 33%;
+  --primary-950: 229 59% 18%;
+}
+
+.green-color-mode {
+  --primary-50: 134 64% 96%;
+  --primary-100: 134 72% 91%;
+  --primary-200: 134 79% 83%;
+  --primary-300: 134 79% 73%;
+  --primary-400: 134 77% 64%;
+  --primary-500: 134 61% 55%;
+  --primary-600: 134 73% 45%;
+  --primary-700: 134 81% 37%;
+  --primary-800: 134 76% 30%;
+  --primary-900: 134 66% 26%;
+  --primary-950: 134 90% 11%;
+}
+
+.orange-color-mode {
+  --primary-50: 24 100% 97%;
+  --primary-100: 24 100% 91%;
+  --primary-200: 25 97% 84%;
+  --primary-300: 26 96% 75%;
+  --primary-400: 26 95% 65%;
+  --primary-500: 24 94% 55%;
+  --primary-600: 19 91% 47%;
+  --primary-700: 16 86% 42%;
+  --primary-800: 16 77% 35%;
+  --primary-900: 15 72% 29%;
+  --primary-950: 15 77% 16%;
+}
+
+.yellow-color-mode {
+  --primary-50: 54 93% 96%;
+  --primary-100: 54 95% 90%;
+  --primary-200: 54 96% 82%;
+  --primary-300: 54 97% 66%;
+  --primary-400: 48 96% 53%;
+  --primary-500: 48 88% 48%;
+  --primary-600: 42 93% 39%;
+  --primary-700: 39 87% 33%;
+  --primary-800: 36 82% 29%;
+  --primary-900: 34 75% 23%;
+  --primary-950: 34 78% 13%;
+}
+
+.purple-color-mode {
+  --primary-50: 258 100% 97%;
+  --primary-100: 258 100% 94%;
+  --primary-200: 258 100% 89%;
+  --primary-300: 258 92% 83%;
+  --primary-400: 258 91% 72%;
+  --primary-500: 258 89% 64%;
+  --primary-600: 262 84% 56%;
+  --primary-700: 269 72% 48%;
+  --primary-800: 270 67% 40%;
+  --primary-900: 272 64% 32%;
+  --primary-950: 273 89% 21%;
+}
+
+.pink-color-mode {
+  --primary-50: 322 77% 97%;
+  --primary-100: 322 84% 94%;
+  --primary-200: 322 88% 89%;
+  --primary-300: 322 88% 78%;
+  --primary-400: 322 86% 66%;
+  --primary-500: 322 82% 56%;
+  --primary-600: 322 77% 48%;
+  --primary-700: 322 76% 42%;
+  --primary-800: 322 74% 35%;
+  --primary-900: 322 69% 30%;
+  --primary-950: 322 86% 17%;
+}
+
+.gray-color-mode {
+  --primary-50: 0 0% 98%;
+  --primary-100: 0 0% 96%;
+  --primary-200: 0 0% 89%;
+  --primary-300: 0 0% 83%;
+  --primary-400: 0 0% 64%;
+  --primary-500: 0 0% 45%;
+  --primary-600: 0 0% 32%;
+  --primary-700: 0 0% 25%;
+  --primary-800: 0 0% 15%;
+  --primary-900: 0 0% 10%;
+  --primary-950: 0 0% 4%;
+}

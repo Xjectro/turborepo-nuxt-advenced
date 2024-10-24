@@ -1,0 +1,31 @@
+{
+  "ui": {
+    "settings": {
+      "configs": {
+        "leftsideItems": {
+          "account": {
+            "index": "Kullanıcı Ayarları",
+            "profile": "Profili Düzenle",
+            "connections": "Bağlantılar"
+          },
+          "modification": {
+            "index": "Değiştirmeler",
+            "password": "Şifre Değiştir",
+            "email": "E-posta Değiştir"
+          },
+          "app": {
+            "index": "Uygulama Ayarları",
+            "appearance": "Görünüm",
+            "language": "Dil"
+          },
+          "auth": {
+            "index": "Güvenlik",
+            "security": "Güvenlik",
+            "token": "Token",
+            "logout": "Çıkış Yap"
+          }
+        }
+      }
+    }
+  }
+}

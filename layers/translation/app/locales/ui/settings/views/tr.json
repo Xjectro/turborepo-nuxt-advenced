@@ -1,0 +1,126 @@
+{
+  "ui": {
+    "settings": {
+      "views": {
+        "account": {
+          "profile": {
+            "title": "Profil Düzenleme",
+            "inputs": {
+              "username": "Kullanıcı Adı",
+              "description": "Açıklama",
+              "avatar": {
+                "title": "Profil Fotoğrafı",
+                "description": "En az 300x300 boyutlarında bir resim yükleyin. GIF dosyaları da kabul edilir. Maksimum boyut 5MB."
+              },
+              "banner": {
+                "title": "Afiş Resmi",
+                "description": "En az 600x350 boyutlarında bir resim yükleyin. GIF dosyaları da kabul edilir. Maksimum boyut 5MB."
+              }
+            },
+            "buttons": {
+              "update": "Güncellemeyi Kaydet"
+            },
+            "messages": {
+              "error": "Değişiklikler kaydedilirken bir hata oluştu!",
+              "success": "Bilgiler başarıyla güncellendi."
+            }
+          },
+          "connections": {
+            "title": "Bağlantılar",
+            "buttons": {
+              "connect": "Bağlan",
+              "update": "Güncelle",
+              "disconnect": "Bağlantıyı Kes"
+            },
+            "items": {
+              "discord": {
+                "label": "Discord Bağlantısı",
+                "description": "Discord ile ilgili işlemlere erişmek için hesabınızı bağlayın."
+              },
+              "twitch": {
+                "label": "Twitch Bağlantısı",
+                "description": "Twitch ile ilgili işlemlere erişmek için hesabınızı bağlayın."
+              },
+              "github": {
+                "label": "Github Bağlantısı",
+                "description": "Github ile ilgili işlemlere erişmek için hesabınızı bağlayın."
+              }
+            }
+          }
+        },
+        "modification": {
+          "password": {
+            "title": "Şifreyi Değiştir",
+            "buttons": {
+              "change": "Değiştir"
+            },
+            "inputs": {
+              "currentPassword": "Mevcut Şifre",
+              "newPassword": "Yeni Şifre",
+              "newPasswordAgain": "Yeni Şifre (Tekrar)"
+            },
+            "messages": {
+              "success": "Şifreniz başarıyla değiştirildi.",
+              "error": "Şifre değiştirilirken bir hata oluştu."
+            }
+          },
+          "email": {
+            "title": "E-posta Değiştir",
+            "buttons": {
+              "change": "Değiştir"
+            },
+            "inputs": {
+              "currentEmail": "Mevcut E-posta",
+              "newEmail": "Yeni E-posta",
+              "newEmailAgain": "Yeni E-posta (Tekrar)"
+            },
+            "messages": {
+              "success": "E-posta başarıyla değiştirildi.",
+              "error": "E-posta değiştirilirken bir hata oluştu."
+            }
+          }
+        },
+        "app": {
+          "language": {
+            "title": "Dil",
+            "buttons": {
+              "change": "Değiştir",
+              "current": "Kullanılan"
+            }
+          },
+          "appearance": {
+            "title": "Görünüm",
+            "subtitle": "Favori Renginizi Seçin",
+            "themes": {
+              "light": "Aydınlık",
+              "dark": "Karanlık"
+            },
+            "colors": {
+              "yellow": "Sarı",
+              "green": "Yeşil",
+              "orange": "Turuncu",
+              "blue": "Mavi",
+              "red": "Kırmızı",
+              "purple": "Mor",
+              "pink": "Pembe",
+              "gray": "Gri"
+            }
+          }
+        },
+        "auth": {
+          "index": {
+            "title": "Güvenlik",
+            "paragraph": "İki faktörlü kimlik doğrulama etkinleştirildiğinde, hesabınıza giriş yaparken e-posta adresinize doğrulama kodu gönderilecektir.",
+            "buttons": {
+              "save": "Değişiklikleri Kaydet"
+            },
+            "messages": {
+              "success": "Değişiklikler başarıyla kaydedildi.",
+              "error": "Değişiklikler kaydedilirken sorun oluştu!"
+            }
+          }
+        }
+      }
+    }
+  }
+}

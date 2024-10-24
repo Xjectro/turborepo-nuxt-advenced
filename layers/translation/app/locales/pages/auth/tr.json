@@ -1,0 +1,91 @@
+{
+  "pages": {
+    "auth": {
+      "login": {
+        "label": "Giriş Yap",
+        "sublabel": "Tekrar hoş geldiniz, sizi görmek güzel!",
+        "inputs": {
+          "email": "E-posta Adresiniz",
+          "password": "Şifreniz"
+        },
+        "buttons": {
+          "check": "Giriş Kontrolü"
+        },
+        "header": {
+          "text": "Hesabınız Yok mu?",
+          "subtext": "{name}'e katılmak için hemen kaydolun!"
+        },
+        "messages": {
+          "error": "Giriş yaparken bir hata oluştu. Lütfen tekrar deneyin.",
+          "success": "Başarıyla giriş yaptınız, hoş geldiniz!"
+        },
+        "timeline": {
+          "verify": "Hesabın size ait olduğunu doğrulayın",
+          "submit": "Giriş Yapın"
+        }
+      },
+      "register": {
+        "label": "Hesap Oluştur",
+        "sublabel": "Hesabınızı oluşturduktan sonra harika vakit geçireceğinizi umuyoruz!",
+        "inputs": {
+          "email": "E-posta Adresiniz",
+          "username": "Kullanıcı Adınız",
+          "firstName": "Adınız",
+          "lastName": "Soyadınız",
+          "password": "Şifreniz"
+        },
+        "buttons": {
+          "submit": "Kayıt Ol"
+        },
+        "header": {
+          "text": "Zaten Üyemisiniz?",
+          "subtext": "{name}'e daha önce katıldınız mı? Giriş yapın!"
+        },
+        "messages": {
+          "error": "Kayıt işlemi sırasında bir sorun oluştu. Lütfen tekrar deneyin.",
+          "success": "Hesabınız başarıyla oluşturuldu, hoş geldiniz!"
+        }
+      },
+      "forgotPassword": {
+        "label": "Şifremi Unuttum",
+        "sublabel": "Aşağıdaki talimatları izleyerek şifrenizi sıfırlayabilirsiniz.",
+        "inputs": {
+          "email": "E-posta Adresiniz"
+        },
+        "buttons": {
+          "submit": "Sıfırlama Bağlantısını Gönder"
+        },
+        "header": {
+          "text": "Şifrenizi Hatırladınız mı?",
+          "subtext": "Giriş yapmak için buraya tıklayın."
+        },
+        "messages": {
+          "error": "Bu e-posta adresine ait bir hesap bulunamadı. Lütfen doğru adresi girdiğinizden emin olun.",
+          "success": "Şifre sıfırlama bağlantısı başarıyla gönderildi."
+        }
+      },
+      "refreshPassword": {
+        "label": "Şifrenizi Yenileyin",
+        "sublabel": "Yeni bir şifre belirleyerek hesabınızı güvenceye alın.",
+        "inputs": {
+          "password": "Yeni Şifreniz"
+        },
+        "buttons": {
+          "submit": "Şifreyi Güncelle"
+        },
+        "header": {
+          "text": "Şifrenizi Hatırladınız mı?",
+          "subtext": "Giriş yapmak için buraya tıklayın."
+        },
+        "messages": {
+          "error": "Sıfırlama bağlantısı geçersiz veya yeni şifre eskisiyle aynı olamaz.",
+          "success": "Şifreniz başarıyla yenilendi."
+        },
+        "timeline": {
+          "verify": "Kimliğinizi doğrulayın",
+          "submit": "Şifrenizi Yenileyin"
+        }
+      }
+    }
+  }
+}

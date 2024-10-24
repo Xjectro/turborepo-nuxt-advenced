@@ -1,0 +1,13 @@
+{
+  "root": {
+    "remove": {
+      "text": "Kaldır"
+    },
+    "error": {
+      "title": "Sanırım Bir Hata Oluştu!",
+      "buttons": {
+        "homepage": "Ana Sayfaya Dön"
+      }
+    }
+  }
+}

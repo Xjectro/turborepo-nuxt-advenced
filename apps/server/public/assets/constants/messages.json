@@ -1,0 +1,62 @@
+{
+  "1": {
+    "name": "Alice",
+    "message": "Hi everyone!",
+    "color": "#ff0000",
+    "badges": ["partner"]
+  },
+  "2": {
+    "name": "Bob",
+    "message": "What's going on here?",
+    "color": "#00ff00",
+    "badges": ["vip"]
+  },
+  "3": {
+    "name": "Charlie",
+    "message": "Good morning!",
+    "color": "#0000ff",
+    "badges": ["premium"]
+  },
+  "4": {
+    "name": "David",
+    "message": "Nice to meet you all.",
+    "color": "#ffa500",
+    "badges": ["staff"]
+  },
+  "5": {
+    "name": "Eve",
+    "message": "Check this out!",
+    "color": "#ff69b4",
+    "badges": ["vip"]
+  },
+  "6": {
+    "name": "Frank",
+    "message": "That's awesome!",
+    "color": "#00ced1",
+    "badges": ["premium"]
+  },
+  "7": {
+    "name": "Grace",
+    "message": "Hello, chat!",
+    "color": "#dc143c",
+    "badges": ["partner"]
+  },
+  "8": {
+    "name": "Hannah",
+    "message": "I'm new here!",
+    "color": "#8a2be2",
+    "badges": ["vip"]
+  },
+  "9": {
+    "name": "Ivy",
+    "message": "This is amazing!",
+    "color": "#ff4500",
+    "badges": ["partner"]
+  },
+  "10": {
+    "name": "Jack",
+    "message": "Can't wait to see more.",
+    "color": "#4682b4",
+    "badges": ["premium"]
+  }
+}

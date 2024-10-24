@@ -4,8 +4,7 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": ["dist/**"]
     },
     "lint": {
       "dependsOn": ["^lint"]
@@ -13,6 +12,32 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "start": {
+      "cache": false,
+      "persistent": true
     }
-  }
+  },
+  "globalEnv": [
+    "MONGODB_URI",
+    "DISCORD_REDIRECT_URI",
+    "DISCORD_CLIENT_ID",
+    "DISCORD_CLIENT_SECRET",
+    "DISCORD_CLIENT_TOKEN",
+    "BUNNY_ACCESS_KEY",
+    "BUNNY_STORAGE_NAME",
+    "BUNNY_HOST_NAME",
+    "NODEMAILER_PASS",
+    "NODEMAILER_USER",
+    "TWITCH_CLIENT_SECRET",
+    "TWITCH_CLIENT_ID",
+    "TWITCH_REDIRECT_URI",
+    "GITHUB_REDIRECT_URI",
+    "GITHUB_CLIENT_ID",
+    "GITHUB_CLIENT_SECRET",
+    "SERVER_URI",
+    "CLIENT_URI",
+    "SESSION_SECRET"
+  ],
+  "envMode": "loose"
 }

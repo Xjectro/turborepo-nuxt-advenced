@@ -1,0 +1,19 @@
+{
+  "layouts": {
+    "callback": {
+      "messages": {
+        "loading": "Your {type} account is connecting with {title}...",
+        "connected": "Your {type} account has successfully connected with {title}.",
+        "error": {
+          "connected": "Failed to connect your {type} account with {title}."
+        }
+      },
+      "submessages": {
+        "connected": "You can close this window and return to the {title} page.",
+        "error": {
+          "connected": "Sorry, there was an issue during the connection. You can close this window and try again."
+        }
+      }
+    }
+  }
+}
