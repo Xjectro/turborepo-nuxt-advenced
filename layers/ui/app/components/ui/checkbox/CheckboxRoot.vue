@@ -21,7 +21,6 @@ import {
 } from "radix-vue";
 
 const props = withDefaults(defineProps<CheckboxRootProps>(), {});
-
 const emits = defineEmits<CheckboxRootEmits>();
 
 const forwarded = useForwardPropsEmits(props, emits);

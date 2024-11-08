@@ -1,28 +1,12 @@
 import mongoose from "mongoose";
 
+import { createAvatarURL, createBannerURL } from "@repo/utils/helpers";
+import type { IUserSchema, IUserModel } from "@repo/types/models";
+
 const Schema = mongoose.Schema;
 
-export interface UserType extends mongoose.Document {
-  _id: mongoose.Schema.Types.ObjectId;
-  auth: any;
-  user_id: string;
-  username: string;
-  description: string;
-  firstName: string;
-  lastName: string;
-  avatarURL: string;
-  bannerURL: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-const userSchema: mongoose.Schema<UserType> = new Schema<UserType>(
+const userSchema: mongoose.Schema<IUserSchema> = new Schema<IUserSchema>(
   {
-    auth: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "auth",
-      required: false,
-    },
     user_id: {
       type: String,
       unique: true,
@@ -54,8 +38,28 @@ const userSchema: mongoose.Schema<UserType> = new Schema<UserType>(
       required: false,
       default: null,
     },
+    auth: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "auth",
+      required: false,
+    },
+    payment: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "userPayment",
+      required: false,
+    },
   },
   { timestamps: true, versionKey: false },
 );
 
-export const User = mongoose.model<UserType>("user", userSchema);
+userSchema.pre<IUserSchema>("save", function (next) {
+  if (!this.avatarURL) {
+    this.avatarURL = createAvatarURL();
+  }
+  if (!this.bannerURL) {
+    this.bannerURL = createBannerURL();
+  }
+  next();
+});
+
+export const User = mongoose.model<IUserSchema, IUserModel>("user", userSchema);

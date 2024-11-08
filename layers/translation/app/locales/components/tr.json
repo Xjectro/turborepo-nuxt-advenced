@@ -1,14 +1,6 @@
 {
   "components": {
     "common": {
-      "navigationMenu": {
-        "widgets": {
-          "chatBox": {
-            "title": "Sohbet Kutusu",
-            "description": "Kanalınızın sohbetini akışınıza ekleyin ve bunu yaparken güzel görünmesini sağlayın."
-          }
-        }
-      },
       "header": {
         "end": {
           "login": "Giriş Yap"
@@ -30,28 +22,13 @@
         }
       }
     },
-    "particles": {
-      "drawerItems": {
-        "common": {
-          "widgets": {
-            "chatBox": "Sohbet Kutusu"
-          }
-        }
-      }
-    },
     "shared": {
-      "user": {
+      "profile": {
         "dropdown": {
           "buttons": {
             "settings": "Ayarlar",
+            "profile": "Profili Görüntüle",
             "logout": "Çıkış Yap"
-          }
-        }
-      },
-      "fontSize": {
-        "select": {
-          "buttons": {
-            "index": "Yazı Boyutu"
           }
         }
       }

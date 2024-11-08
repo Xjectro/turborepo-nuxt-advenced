@@ -2,27 +2,11 @@
   <div>
     <NuxtLayout name="form-auth" v-bind="layout" @interaction="onHandle">
       <template #context-area>
-        <UiPinInput
-          v-if="form.timeline == 'verify'"
-          :repeat="5"
-          @complate="onHandle"
-        />
-        <UiInputFloat
-          v-if="form.timeline == 'check'"
-          v-model="inputs.email"
-          :label="t('pages.auth.login.inputs.email')"
-          :disabled="layout.button.disabled"
-          type="email"
-          required
-        />
-        <UiInputFloat
-          v-if="form.timeline == 'check'"
-          v-model="inputs.password"
-          :disabled="layout.button.disabled"
-          :label="t('pages.auth.login.inputs.password')"
-          type="password"
-          required
-        />
+        <UiPinInput v-if="form.timeline == 'verify'" :repeat="5" @complate="onHandle" />
+        <UiInputFloat v-if="form.timeline == 'check'" v-model="inputs.email" :label="t('pages.auth.login.inputs.email')"
+          :disabled="layout.button.disabled" type="email" required />
+        <UiInputFloat v-if="form.timeline == 'check'" v-model="inputs.password" :disabled="layout.button.disabled"
+          :label="t('pages.auth.login.inputs.password')" type="password" required />
       </template>
       <template v-if="form.timeline == 'check'" #button-area>
         {{ t("pages.auth.login.buttons.check") }}
@@ -70,18 +54,17 @@ const inputs = reactive({
 async function onHandle(usage_code?: string) {
   layout.button.loaded = false;
   layout.button.disabled = true;
-  try {
-    if (form.timeline === "check") {
-      const data = await $fetch("/api/auth/login", {
-        method: "POST",
-        body: usage_code ? { usage_code } : inputs,
-      });
 
-      if (data?.message === "2FA required, check your email for the code.") {
-        form.timeline = "verify";
-      } else {
-        setUser();
-      }
+  try {
+    const data = await $fetch("/api/auth/login", {
+      method: "POST",
+      body: { usage_code, ...inputs },
+    });
+
+    if (data?.message === "2FA required, check your email for the code.") {
+      form.timeline = "verify";
+    } else {
+      setUser();
     }
   } catch {
     layout.message.label = t("pages.auth.login.messages.error");

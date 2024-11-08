@@ -1,7 +1,7 @@
 <template>
-  <NuxtLayout name="app"> test </NuxtLayout>
+  <NuxtLayout name="app"> Test </NuxtLayout>
 </template>
 
 <script lang="ts" setup>
-definePageMeta({ middleware: ["user-auth"] });
+definePageMeta({ middleware: "user-auth" });
 </script>

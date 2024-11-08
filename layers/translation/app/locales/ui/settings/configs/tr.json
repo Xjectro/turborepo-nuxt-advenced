@@ -13,6 +13,10 @@
             "password": "Şifre Değiştir",
             "email": "E-posta Değiştir"
           },
+          "payment": {
+            "index": "Ödeme Ayarları",
+            "defaultCharge": "Varsayılan Ücret"
+          },
           "app": {
             "index": "Uygulama Ayarları",
             "appearance": "Görünüm",

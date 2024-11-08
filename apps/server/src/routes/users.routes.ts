@@ -10,6 +10,11 @@ class Routes {
 
   constructor() {
     /**
+     * Catching Routes
+     */
+    this.router.get("/catching/:source", this.controller.catching.index);
+
+    /**
      * Me Routes
      */
     this.router.get("/@me", auth, this.controller.me.index);

@@ -10,7 +10,10 @@ passport.serializeUser((user: any, done) => {
 
 passport.deserializeUser(async (id, done) => {
   try {
-    const user = await User.findById(id).populate("auth");
+    const user = await User.findById(id).populate([
+      "auth",
+      "payment",
+    ]);
 
     done(null, user);
   } catch (err: any) {

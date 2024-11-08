@@ -1,9 +1,9 @@
 <template>
   <DropdownMenuItem
-    v-bind="forwardedProps"
+    v-bind="forwarded"
     :class="
       $cn(
-        'transition-all cursor-pointer flex items-center justify-start overflow-hidden w-full px-4 py-2 rounded-lg gap-2 text-base font-chakra-petch font-medium whitespace-nowrap group hover:bg-zinc-100 dark:hover:bg-zinc-900 text-zinc-700 dark:text-zinc-400 hover:text-black dark:hover:text-zinc-100',
+        'cursor-pointer flex items-center justify-start overflow-hidden w-full px-4 py-2 rounded-xl gap-2 text-base font-inter font-medium whitespace-nowrap group hover:bg-zinc-100 dark:hover:bg-zinc-900 text-zinc-700 dark:text-zinc-400 hover:text-black dark:hover:text-zinc-100',
         inset && 'pl-8',
         props.class,
       )
@@ -18,9 +18,9 @@
 import {
   DropdownMenuItem,
   type DropdownMenuItemProps,
-  useForwardProps,
+  useForwardPropsEmits,
 } from "radix-vue";
-import { type HTMLAttributes, computed } from "vue";
+import { type HTMLAttributes } from "vue";
 
 const props = defineProps<
   DropdownMenuItemProps & {
@@ -29,21 +29,15 @@ const props = defineProps<
     to?: string;
   }
 >();
+const emits = defineEmits(["interaction"]);
 
-const emit = defineEmits(["interaction"]);
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props;
+const forwarded = useForwardPropsEmits(props, emits);
 
-  return delegated;
-});
-
-const forwardedProps = useForwardProps(delegatedProps);
-
-function onClick() {
+const onClick = useThrottleFn(() => {
   if (props.to) {
     navigateTo(props.to);
   } else {
-    emit("interaction");
+    emits("interaction");
   }
-}
+}, 200);
 </script>

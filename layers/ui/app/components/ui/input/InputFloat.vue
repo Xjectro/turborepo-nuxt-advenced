@@ -1,10 +1,9 @@
 <template>
   <InputGroup
     :disabled="disabled"
-    class="relative flex flex-col items-start justify-center overflow-hidden w-full rounded-xl font-chakra-petch font-medium"
+    class="relative flex flex-col items-start justify-center overflow-hidden w-full rounded-xl font-inter font-medium"
   >
-    <InputLabel
-      :label="props.label"
+    <UiLabel
       :required="required"
       :class="
         $cn(
@@ -14,7 +13,8 @@
             : 'translate-x-5 translate-y-0 opacity-100',
         )
       "
-    />
+      >{{ props.label }}</UiLabel
+    >
     <InputRoot
       v-model="value"
       :type="type"
@@ -29,7 +29,6 @@
 
 <script setup lang="ts">
 import InputRoot from "./InputRoot.vue";
-import InputLabel from "./InputLabel.vue";
 import InputGroup from "./InputGroup.vue";
 
 const { $cn } = useNuxtApp();
@@ -49,12 +48,12 @@ const props = defineProps({
   required: Boolean,
 });
 
-const emit = defineEmits(["update:modelValue"]);
+const emits = defineEmits(["update:modelValue"]);
 
 const isFocused = ref(false);
 const value = ref(props.modelValue);
 
 watch(value, () => {
-  emit("update:modelValue", value.value);
+  emits("update:modelValue", value.value);
 });
 </script>

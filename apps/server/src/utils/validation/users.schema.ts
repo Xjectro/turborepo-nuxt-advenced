@@ -14,7 +14,6 @@ const me = {
       .max(180, { message: "Description cannot exceed 180 characters." })
       .optional(),
     avatarURL: z.string().optional(),
-    bannerURL: z.string().optional(),
   }),
 };
 

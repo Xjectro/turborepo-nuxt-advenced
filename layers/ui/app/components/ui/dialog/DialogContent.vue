@@ -12,9 +12,9 @@
 
 <script setup lang="ts">
 import type { HtmlHTMLAttributes } from "vue";
+import DialogOverlay from "./DialogOverlay.vue";
 import { useForwardPropsEmits, DialogContent, DialogPortal } from "radix-vue";
 import type { DialogContentProps, DialogContentEmits } from "radix-vue";
-import DialogOverlay from "../dialog/DialogOverlay.vue";
 
 const props = defineProps<
   DialogContentProps & { class?: HtmlHTMLAttributes["class"]; title?: string }

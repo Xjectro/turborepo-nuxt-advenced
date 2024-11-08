@@ -1,6 +1,6 @@
 <template>
   <DialogOverlay
-    v-bind="delegatedProps"
+    v-bind="forwaredProps"
     :class="
       $cn(
         'data-[state=open]:animate-overlay-show data-[state=closed]:animate-overlay-hide fixed inset-0 z-[100] bg-black/80',
@@ -11,17 +11,13 @@
 </template>
 
 <script setup lang="ts">
-import { DialogOverlay } from "radix-vue";
+import { DialogOverlay, useForwardProps } from "radix-vue";
 import type { DialogOverlayProps } from "radix-vue";
-import { type HtmlHTMLAttributes, computed } from "vue";
+import { type HtmlHTMLAttributes } from "vue";
 
 const props = defineProps<
   DialogOverlayProps & { class?: HtmlHTMLAttributes["class"] }
 >();
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props;
-
-  return delegated;
-});
+const forwaredProps = useForwardProps(props);
 </script>

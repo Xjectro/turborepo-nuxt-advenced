@@ -1,12 +1,30 @@
 <template>
-  <UiInput v-model="state.inputs.currentPassword"
-    :label="t('ui.settings.views.modification.password.inputs.currentPassword')" type="password" required />
-  <UiInput v-model="state.inputs.newPassword" :label="t('ui.settings.views.modification.password.inputs.newPassword')"
-    type="password" required />
-  <UiInput v-model="state.inputs.newPasswordAgain" :label="t('ui.settings.views.modification.password.inputs.newPasswordAgain')
-    " type="password" required />
-  <UiButton class="px-5 py-2.5" :loading="state.button.loading" :disabled="state.button.disabled"
-    @interaction="onUpdate">
+  <UiInput
+    v-model="state.inputs.currentPassword"
+    :label="t('ui.settings.views.modification.password.inputs.currentPassword')"
+    type="password"
+    required
+  />
+  <UiInput
+    v-model="state.inputs.newPassword"
+    :label="t('ui.settings.views.modification.password.inputs.newPassword')"
+    type="password"
+    required
+  />
+  <UiInput
+    v-model="state.inputs.newPasswordAgain"
+    :label="
+      t('ui.settings.views.modification.password.inputs.newPasswordAgain')
+    "
+    type="password"
+    required
+  />
+  <UiButton
+    class="px-5 py-2.5"
+    :loading="state.button.loading"
+    :disabled="state.button.disabled"
+    @interaction="onUpdate"
+  >
     {{ t("ui.settings.views.modification.password.buttons.change") }}
   </UiButton>
 </template>
@@ -16,7 +34,7 @@ const { t } = useI18n();
 const { pageStore } = useUi();
 
 pageStore.dialog.settings.layout = {
-  scopes: ["USER", "ADMIN"],
+  scopes: ["USER"],
   title: t("ui.settings.views.modification.password.title"),
   message: { label: "", visible: false, type: "success" },
 };

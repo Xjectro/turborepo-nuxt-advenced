@@ -45,6 +45,16 @@ export default [
     ],
   },
   {
+    path: "/payment",
+    children: [
+      {
+        path: "default-charge",
+        middleware: ["user-auth"],
+        component: () => import("../views/payment/default-charge.vue"),
+      },
+    ],
+  },
+  {
     path: "/auth",
     middleware: ["user-auth"],
     component: () => import("../views/auth/index.vue"),

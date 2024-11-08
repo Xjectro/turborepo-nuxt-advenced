@@ -1,12 +1,8 @@
 import { exceptionResponse, response } from "../../api";
 import { type Request, type Response } from "express";
-import { DuplicatedDataError, NotFoundError } from "@repo/utils";
-import {
-  User,
-  Connection,
-  type ConnectionType,
-  updateStates,
-} from "@repo/database";
+import { DuplicatedDataError } from "@repo/utils/exceptions";
+import { User, UserConnection, updateStates } from "@repo/database";
+import type { IUserConnectionSchema } from "@repo/types/models";
 
 export default class UsersMeController {
   index = (req: Request, res: Response): void => {
@@ -41,7 +37,7 @@ export default class UsersMeController {
       const state = updateStates(rest);
 
       await User.updateOne(
-        { _id: user._id },
+        { _id: user?._id },
         { $set: state },
         { upsert: true },
       ).exec();
@@ -60,16 +56,21 @@ export default class UsersMeController {
     try {
       const user = req.user;
 
-      const connections = await Connection.find({ user })
+      const connections = await UserConnection.find({ user })
         .select("data type")
         .exec();
 
       if (connections.length === 0) {
-        throw new NotFoundError("No connections found for the user");
+        response(res, {
+          code: 200,
+          success: true,
+          message: "Connections were pulled successfully",
+          data: [],
+        });
       }
 
-      const data = connections.map((connection: ConnectionType) => ({
-        id: connection.id,
+      const data = connections.map((connection: IUserConnectionSchema) => ({
+        id: connection.data.id,
         name: connection.data.name,
         username: connection.data.username,
         type: connection.type,

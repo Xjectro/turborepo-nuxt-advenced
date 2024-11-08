@@ -13,6 +13,10 @@
             "password": "Change Password",
             "email": "Change Email"
           },
+          "payment": {
+            "index": "Payment Settings",
+            "defaultCharge": "Default Charge"
+          },
           "app": {
             "index": "App Settings",
             "appearance": "Appearance",

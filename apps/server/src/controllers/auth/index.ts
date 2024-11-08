@@ -2,11 +2,11 @@ import AuthTfaController from "./tfa";
 import { Tfa, User, Auth } from "@repo/database";
 import { exceptionResponse, response } from "../../api";
 import { type NextFunction, type Request, type Response } from "express";
-import { createUser } from "../../services/db.services";
+import { createUser } from "@repo/services/db";
 import AuthModificationController from "./modification";
 import { createEmail } from "../../utils/helpers/email";
 import { sendEmail } from "../../services/transport.services";
-import { DuplicatedDataError, UnauthorizedError } from "@repo/utils";
+import { DuplicatedDataError, UnauthorizedError } from "@repo/utils/exceptions";
 import passport from "passport";
 
 export default class Controller {

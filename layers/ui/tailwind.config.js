@@ -14,7 +14,7 @@ export default {
       center: true,
       padding: '1.4rem',
       screens: {
-        '2xl': '1200px',
+        '2xl': '1500px',
       },
     },
     extend: {
@@ -337,6 +337,10 @@ export default {
         'light-sm': '0 0px 8px rgba(255, 255, 255, 0.3)',
       },
       keyframes: {
+        hide: {
+          from: { opacity: 1 },
+          to: { opacity: 0 },
+        },
         overlayShow: {
           '0%': { opacity: 0 },
           '100%': { opacity: 1 },
@@ -401,6 +405,14 @@ export default {
           from: { opacity: 1 },
           to: { opacity: 0 },
         },
+        slideIn: {
+          from: { transform: 'translateX(calc(100% + var(--viewport-padding)))' },
+          to: { transform: 'translateX(0)' },
+        },
+        swipeOut: {
+          from: { transform: 'translateX(var(--radix-toast-swipe-end-x))' },
+          to: { transform: 'translateX(calc(100% + var(--viewport-padding)))' },
+        },
       },
       animation: {
         "overlay-show": 'overlayShow 100ms ease-in-out',
@@ -419,7 +431,14 @@ export default {
         "enter-from-right": 'enterFromRight 250ms ease',
         "exit-to-left": 'exitToLeft 250ms ease',
         "exit-to-right": 'exitToRight 250ms ease',
+        hide: 'hide 100ms ease-in',
+        "slide-in": 'slideIn 150ms cubic-bezier(0.16, 1, 0.3, 1)',
+        "swipe-out": 'swipeOut 100ms ease-out',
       },
+      boxShadow: {
+        "shading-down": 'inset 0 -15px 80px rgba(0, 0, 0, 0.9)',
+        "shading-up": 'inset 0 20px 80px rgba(0, 0, 0, 0.9)'
+      }
     },
   },
   plugins: [require('tailwindcss-animated'), require('tailwindcss-bg-patterns'),

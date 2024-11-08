@@ -1,7 +1,7 @@
 <template>
   <UiSwitch v-model:checked="enabled" />
   <p
-    class="transition-all text-start text-base font-chakra-petch font-medium text-zinc-400 dark:text-zinc-400"
+    class="transition-all text-start text-base font-inter font-medium text-zinc-400 dark:text-zinc-400"
   >
     {{ t("ui.settings.views.auth.index.paragraph") }}
   </p>
@@ -24,7 +24,7 @@ const enabled = ref(!!accountStore._getUser?.auth.tfa);
 const isLoaded = ref(true);
 
 pageStore.dialog.settings.layout = {
-  scopes: ["USER", "ADMIN"],
+  scopes: ["USER"],
   title: t("ui.settings.views.auth.index.title"),
   message: {
     label: t("ui.settings.views.auth.index.messages.error"),

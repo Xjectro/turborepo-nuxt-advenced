@@ -2,34 +2,11 @@ import crypto from "crypto";
 import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
 
+import type { ITfaModel, ITfaSchema } from "@repo/types/models";
+
 const Schema = mongoose.Schema;
 
-export interface TfaType extends mongoose.Document {
-  user: any;
-  interaction: string;
-  used: boolean;
-  usage_code: string;
-  expiration: Date;
-}
-
-interface TfaModel extends mongoose.Model<TfaType> {
-  checkTfa({
-    usage_code,
-  }: {
-    usage_code: TfaType["usage_code"];
-  }): Promise<TfaType>;
-  createTfa({
-    user,
-    format,
-    interaction,
-  }: {
-    user: TfaType["user"];
-    format?: "jwt";
-    interaction: TfaType["interaction"];
-  }): Promise<{ usage_code: string; expiration: Date; tfa: TfaType }>;
-}
-
-const tfaSchema = new Schema<TfaType>(
+const tfaSchema = new Schema<ITfaSchema>(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
@@ -60,7 +37,7 @@ const tfaSchema = new Schema<TfaType>(
 tfaSchema.statics.checkTfa = async function checkTfa({
   usage_code,
 }: {
-  usage_code: TfaType["usage_code"];
+  usage_code: ITfaSchema["usage_code"];
 }) {
   const tfa = await Tfa.findOne({ usage_code });
 
@@ -77,9 +54,9 @@ tfaSchema.statics.createTfa = async function createTfa({
   format,
   interaction,
 }: {
-  user: TfaType["user"];
+  user: ITfaSchema["user"];
   format: "jwt";
-  interaction: TfaType["interaction"];
+  interaction: ITfaSchema["interaction"];
 }) {
   let usage_code = "";
   const expiration = new Date(Date.now() + 180 * 1000);
@@ -113,4 +90,4 @@ tfaSchema.statics.createTfa = async function createTfa({
   return { usage_code, expiration, tfa };
 };
 
-export const Tfa = mongoose.model<TfaType, TfaModel>("tfa", tfaSchema);
+export const Tfa = mongoose.model<ITfaSchema, ITfaModel>("tfa", tfaSchema);

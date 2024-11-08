@@ -37,7 +37,7 @@ const { pageStore } = useUi();
 const currentUser = computed(() => accountStore._getUser);
 
 pageStore.dialog.settings.layout = {
-  scopes: ["USER", "ADMIN"],
+  scopes: ["USER"],
   title: t("ui.settings.views.modification.email.title"),
   message: { label: "", visible: false, type: "success" },
 };

@@ -15,7 +15,6 @@ const props = withDefaults(
   defineProps<CheckboxRootProps & { class?: string }>(),
   {},
 );
-
 const emits = defineEmits<CheckboxRootEmits>();
 
 const forwarded = useForwardPropsEmits(props, emits);

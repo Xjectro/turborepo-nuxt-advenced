@@ -1,7 +1,7 @@
 import { Auth, Tfa } from "@repo/database";
 import { exceptionResponse, response } from "../../api";
 import { type Request, type Response } from "express";
-import { UnauthorizedError } from "@repo/utils";
+import { UnauthorizedError } from "@repo/utils/exceptions";
 
 export default class AuthTfaController {
   index = async (req: Request, res: Response): Promise<void> => {

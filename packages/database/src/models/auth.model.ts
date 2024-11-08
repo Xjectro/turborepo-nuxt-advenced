@@ -1,29 +1,15 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 
+import {
+  type IAuthModel,
+  type IAuthSchema,
+  IAuthRole,
+} from "@repo/types/models";
+
 const Schema = mongoose.Schema;
 
-export enum Role {
-  ADMIN = "ADMIN",
-  STAFF = "STAFF",
-  USER = "USER",
-}
-
-export interface AuthType extends mongoose.Document {
-  _id: mongoose.Schema.Types.ObjectId;
-  user: any;
-  email: string;
-  password: string;
-  role: Role;
-  tfa: boolean;
-  comparePassword: (password: string) => Promise<boolean>;
-}
-
-interface AuthModel extends mongoose.Model<AuthType> {
-  checkEmail(email: string): Promise<boolean>;
-}
-
-const authSchema: mongoose.Schema<AuthType> = new Schema<AuthType>(
+const authSchema: mongoose.Schema<IAuthSchema> = new Schema<IAuthSchema>(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
@@ -36,10 +22,10 @@ const authSchema: mongoose.Schema<AuthType> = new Schema<AuthType>(
       required: true,
       match: /.+@.+\..+/,
     },
-    role: {
-      type: String,
-      enum: Object.values(Role),
-      default: Role.USER,
+    roles: {
+      type: [String],
+      enum: Object.values(IAuthRole),
+      default: IAuthRole.USER,
     },
     password: {
       type: String,
@@ -53,7 +39,7 @@ const authSchema: mongoose.Schema<AuthType> = new Schema<AuthType>(
   { timestamps: true, versionKey: false },
 );
 
-authSchema.pre<AuthType>("save", async function (next) {
+authSchema.pre<IAuthSchema>("save", async function (next) {
   if (!this.isModified("password")) return next();
 
   const salt = await bcrypt.genSalt(10);
@@ -74,4 +60,4 @@ authSchema.statics.checkEmail = async function (email: string) {
   return !!(await Auth.findOne({ email }));
 };
 
-export const Auth = mongoose.model<AuthType, AuthModel>("auth", authSchema);
+export const Auth = mongoose.model<IAuthSchema, IAuthModel>("auth", authSchema);

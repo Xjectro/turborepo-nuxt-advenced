@@ -5,3 +5,4 @@ export { default as NavigationMenuIndicator } from "./NavigationMenuIndicator.vu
 export { default as NavigationMenuListItem } from "./NavigationMenuListItem.vue";
 export { default as NavigationMenuRoot } from "./NavigationMenuRoot.vue";
 export { default as NavigationMenuTrigger } from "./NavigationMenuTrigger.vue";
+export { default as NavigationMenuLeftBox } from "./NavigationMenuLeftBox.vue";

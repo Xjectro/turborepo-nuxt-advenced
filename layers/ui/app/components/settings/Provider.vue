@@ -7,19 +7,25 @@
       <UiScrollAreaRoot class="w-full h-full">
         <UiScrollAreaViewport class="w-full max-h-screen pb-10">
           <UiSplitterGroup direction="horizontal" class="w-full container">
-            <UiSplitterPanel :min-size="25" class="hidden h-screen lg:block pt-10">
+            <UiSplitterPanel
+              :min-size="25"
+              class="hidden h-screen lg:block pt-10"
+            >
               <UiSidebar>
                 <LeftsideItems />
               </UiSidebar>
             </UiSplitterPanel>
 
-            <UiSplitterPanel :min-size="75" class="flex flex-col items-start pt-8 lg:pl-5">
+            <UiSplitterPanel
+              :min-size="75"
+              class="flex flex-col items-start pt-8 lg:pl-5"
+            >
               <div class="flex items-center justify-between w-full mb-6">
                 <UiDialogTitle>
                   {{ settings.layout.title }}
                   <UiDrawer v-model:open="drawerOpen">
                     <UiDrawerTrigger class="lg:hidden">
-                      <IconMenu class="w-5 h-5" />
+                      <IconMenu :size="18" />
                     </UiDrawerTrigger>
                     <UiDrawerContent>
                       <LeftsideItems />
@@ -29,7 +35,10 @@
                 <UiDialogClose />
               </div>
               <div class="flex flex-col items-start w-full gap-10">
-                <UiMessage v-if="settings.layout.message?.visible" v-bind="settings.layout.message" />
+                <UiMessage
+                  v-if="settings.layout.message?.visible"
+                  v-bind="settings.layout.message"
+                />
                 <component :is="currentComponent" />
               </div>
             </UiSplitterPanel>
@@ -78,7 +87,7 @@ async function findComponent(path: string) {
 
   if (
     settings.layout.scopes &&
-    !settings.layout.scopes?.includes(accountStore._getUser?.auth?.role)
+    !useVerifyRole(settings.layout.scopes, accountStore._getUser?.auth?.roles)
   ) {
     settings.path = "/app/appearance";
   }

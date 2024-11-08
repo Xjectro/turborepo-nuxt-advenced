@@ -1,6 +1,6 @@
 <template>
   <SliderRoot
-    v-bind="forwarded"
+    v-bind="forward"
     :class="
       $cn(
         'relative flex items-center select-none touch-none w-full h-5',
@@ -8,20 +8,27 @@
       )
     "
   >
-    <slot />
+    <SliderTrack>
+      <SliderRange />
+    </SliderTrack>
+
+    <SliderThumb v-for="(_, i) in props.modelValue" :key="i" />
   </SliderRoot>
 </template>
 
 <script lang="ts" setup>
-import { useForwardPropsEmits, SliderRoot } from "radix-vue";
-import type { SliderRootProps, SliderRootEmits } from "radix-vue";
+import SliderRange from "./SliderRange.vue";
+import SliderTrack from "./SliderTrack.vue";
+import SliderThumb from "./SliderThumb.vue";
+import {
+  type SliderRootEmits,
+  type SliderRootProps,
+  useForwardPropsEmits,
+  SliderRoot,
+} from "radix-vue";
 
-const props = withDefaults(
-  defineProps<SliderRootProps & { class?: HTMLButtonElement["className"] }>(),
-  {},
-);
-
+const props = defineProps<SliderRootProps & { class?: string }>();
 const emits = defineEmits<SliderRootEmits>();
 
-const forwarded = useForwardPropsEmits(props, emits);
+const forward = useForwardPropsEmits(props, emits);
 </script>

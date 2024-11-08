@@ -1,18 +1,16 @@
 <template>
   <div>
     <CommonHeader />
-
-    <div class="container">
+    <div :class="$cn('container', props.class)">
       <slot />
     </div>
-
     <CommonFooter />
   </div>
 </template>
 
 <script lang="ts" setup>
 const config = useRuntimeConfig();
-const { accountStore } = useUtils();
+const { accountStore } = useImports();
 
 const currentUser = computed(() => accountStore._getUser);
 
@@ -21,15 +19,28 @@ const props = defineProps({
     type: Array as PropType<string[]>,
     default: null,
   },
+  class: {
+    type: String,
+    default: null,
+  },
 });
 
 useHead({
-  title: `${config.app.title}`,
-  meta: [{ property: "og:title", content: `${config.app.title}` }],
+  htmlAttrs: {
+    class: "max-h-screen overflow-hidden",
+  },
+});
+
+useSeoMeta({
+  title: config.app.title,
+  ogTitle: config.app.title,
 });
 
 onMounted(() => {
-  if (props.scopes && !props.scopes?.includes(currentUser.value?.auth.role)) {
+  if (
+    props.scopes &&
+    !useVerifyRole(props.scopes, currentUser.value.auth.roles)
+  ) {
     navigateTo("/auth/login");
     return;
   }

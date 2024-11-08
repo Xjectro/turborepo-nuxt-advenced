@@ -1,0 +1,10 @@
+{
+  "ui": {
+    "alertDialog": {
+      "buttons": {
+        "action": "Submit",
+        "cancel": "Cancel"
+      }
+    }
+  }
+}

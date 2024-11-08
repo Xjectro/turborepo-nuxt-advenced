@@ -1,6 +1,6 @@
 import { type ZodType } from "zod";
 import { exceptionResponse } from "../api";
-import { UnprocessableEntityError } from "@repo/utils";
+import { UnprocessableEntityError } from "@repo/utils/exceptions";
 import { type Request, type Response, type NextFunction } from "express";
 
 export const validateBody = (schema: ZodType) => {

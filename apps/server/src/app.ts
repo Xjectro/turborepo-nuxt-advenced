@@ -27,12 +27,12 @@ app.use(
   }),
 );
 
-app.use(
+/**app.use(
   rateLimit({
     max: 10,
     windowMs: 5000,
   }),
-);
+);*/
 
 app.use(cookieParser());
 

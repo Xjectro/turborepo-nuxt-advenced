@@ -13,13 +13,13 @@ const formattedDate = date
   .replace(",", "");
 
 console.info = (...args: any[]) => {
-  originalInfo.call(console, `${`[${formattedDate}]`.gray}🌟`, ...args);
+  originalInfo.call(console, `${`[${formattedDate}]`.gray}`, ...args);
 };
 
 console.warn = (...args: any[]) => {
-  originalInfo.call(console, `${`[${formattedDate}]`.gray}⚠️`, ...args);
+  originalInfo.call(console, `${`[${formattedDate}]`.gray}`, ...args);
 };
 
 console.log = (...args: any[]) => {
-  originalInfo.call(console, `${`[${formattedDate}]`.gray}📢`, ...args);
+  originalInfo.call(console, `${`[${formattedDate}]`.gray}`, ...args);
 };

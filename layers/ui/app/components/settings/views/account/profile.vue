@@ -1,26 +1,21 @@
 <template>
-  <div class="relative flex flex-col items-center justify-end w-full mb-10">
-    <UiFileUpload
-      v-model="state.inputs.bannerURL"
-      width="full"
-      height="160px"
-      :title="t('ui.settings.views.account.profile.inputs.banner.title')"
-      :description="
-        t('ui.settings.views.account.profile.inputs.banner.description')
-      "
-    />
-    <UiFileUpload
-      v-model="state.inputs.avatarURL"
-      width="128px"
-      height="128px"
-      rounded
-      class="absolute top-24 border-4 z-10 border-white dark:border-zinc-900"
-      :title="t('ui.settings.views.account.profile.inputs.avatar.title')"
-      :description="
-        t('ui.settings.views.account.profile.inputs.avatar.description')
-      "
-    />
-  </div>
+  <UiFileUpload
+    variant="card"
+    v-model="state.inputs.avatarURL"
+    :title="t('ui.settings.views.account.profile.inputs.avatar.title')"
+    :description="
+      t('ui.settings.views.account.profile.inputs.avatar.description')
+    "
+  />
+  <UiFileUpload
+    variant="card"
+    v-model="state.inputs.bannerURL"
+    :title="t('ui.settings.views.account.profile.inputs.banner.title')"
+    :description="
+      t('ui.settings.views.account.profile.inputs.banner.description')
+    "
+  />
+  <UiDivider />
   <UiInput
     v-model="state.inputs.username"
     :label="t('ui.settings.views.account.profile.inputs.username')"
@@ -47,7 +42,7 @@
 
 <script lang="ts" setup>
 const { t } = useI18n();
-const { $uploadFile } = useNuxtApp();
+const { tryUploadFile } = useFile();
 const { accountStore } = useUtils();
 const { pageStore } = useUi();
 
@@ -64,7 +59,7 @@ const state = reactive({
 });
 
 pageStore.dialog.settings.layout = {
-  scopes: ["USER", "ADMIN"],
+  scopes: ["USER"],
   title: t("ui.settings.views.account.profile.title"),
   message: { label: "", visible: false, type: "success" },
 };
@@ -126,11 +121,9 @@ async function createPayload() {
   const { avatarURL, bannerURL, username, description } = state.inputs;
 
   if (avatarURL !== currentUser.value?.avatarURL)
-    payload.avatarURL =
-      avatarURL instanceof File ? await $uploadFile(avatarURL) : null;
+    payload.avatarURL = await tryUploadFile(avatarURL);
   if (bannerURL !== currentUser.value?.bannerURL)
-    payload.bannerURL =
-      bannerURL instanceof File ? await $uploadFile(bannerURL) : null;
+    payload.bannerURL = await tryUploadFile(bannerURL);
   if (username !== currentUser.value?.username) payload.username = username;
   if (description !== currentUser.value?.description)
     payload.description = description;

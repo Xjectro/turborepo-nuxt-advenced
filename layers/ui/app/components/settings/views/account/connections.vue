@@ -43,7 +43,7 @@ const { accountStore } = useUtils();
 const runtimeConfig = useRuntimeConfig();
 
 pageStore.dialog.settings.layout = {
-  scopes: ["USER", "ADMIN"],
+  scopes: ["USER"],
   title: t("ui.settings.views.account.connections.title"),
 };
 
@@ -93,8 +93,8 @@ const disconnect = async (type: string) => {
 
   connection.loaded = false;
 
-  const data = await $fetch("/users/connections/disconnect", {
-    method: "POST",
+  const data = await $fetch("/api/users/connections/disconnect", {
+    method: "GET",
     params: { type },
   });
 

@@ -11,7 +11,7 @@
             <nav class="flex items-center justify-between w-full">
               <UiButton type="nds" to="/" variant="transparent">
                 <img
-                  src="/assets/images/app.png"
+                  src="/assets/images/app.svg"
                   alt="App logo"
                   class="w-6 h-6 object-cover"
                 />
@@ -33,7 +33,7 @@
             </nav>
 
             <div
-              class="transition-all flex flex-col items-start w-full h-full gap-7 font-chakra-petch text-black dark:text-stone-100"
+              class="transition-all flex flex-col items-start w-full h-full gap-7 font-inter text-black dark:text-stone-100"
             >
               <header
                 class="flex flex-col items-start justify-start w-full gap-2 text-center"
@@ -138,19 +138,15 @@ const props = defineProps({
 });
 
 useHead({
-  title: t("pages.index.head.auth.title"),
-  meta: [
-    {
-      property: "og:title",
-      content: t("pages.index.head.auth.title"),
-    },
-    {
-      property: "og:description",
-      content: t("pages.index.head.auth.description"),
-    },
-  ],
   htmlAttrs: {
     class: "max-h-screen overflow-hidden",
   },
+});
+
+useSeoMeta({
+  title: t("pages.index.head.auth.title"),
+  description: t("pages.index.head.auth.description"),
+  ogTitle: t("pages.index.head.auth.title"),
+  ogDescription: t("pages.index.head.auth.description"),
 });
 </script>

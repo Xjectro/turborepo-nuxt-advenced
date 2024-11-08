@@ -1,9 +1,9 @@
 <template>
   <InputGroup
     :disabled="props.disabled"
-    class="relative flex flex-col items-start gap-2 w-full"
+    class="flex flex-col items-start gap-2 w-full"
   >
-    <InputLabel :label="label" :required="required" class="text-sm" />
+    <UiLabel :required="required" class="text-sm">{{ label }}</UiLabel>
     <TextareaRoot
       v-model="value"
       :maxHeight="props.maxHeight"
@@ -15,7 +15,7 @@
 
 <script lang="ts" setup>
 import TextareaRoot from "./TextareaRoot.vue";
-import { InputLabel, InputGroup } from "../input";
+import { InputGroup } from "../input";
 import { type TextareProps } from ".";
 
 const props = withDefaults(defineProps<TextareProps>(), {
@@ -24,10 +24,10 @@ const props = withDefaults(defineProps<TextareProps>(), {
   type: "text",
 });
 
-const emit = defineEmits(["update:modelValue"]);
+const emits = defineEmits(["update:modelValue"]);
 const value = ref(props.modelValue);
 
 watch(value, () => {
-  emit("update:modelValue", value.value);
+  emits("update:modelValue", value.value);
 });
 </script>

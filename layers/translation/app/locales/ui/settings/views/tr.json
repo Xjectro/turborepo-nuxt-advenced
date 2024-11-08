@@ -80,6 +80,25 @@
             }
           }
         },
+        "payment": {
+          "defaultCharge": {
+            "title": "Varsayılan Ücret",
+            "buttons": {
+              "update": "Güncelle"
+            },
+            "inputs": {
+              "charge": "Ücret"
+            },
+            "messages": {
+              "success": "Ücret başarıyla güncellendi.",
+              "error": "Ücret güncellenirken bir hata oluştu."
+            },
+            "alertDialog": {
+              "title": "Emin misin?",
+              "description": "Varsayılan fiyatlandırmayı değiştirdiğinizde, yeni kitaplığınıza eklenen herb ler ve diğer özellikler varsayılan olarak bu fiyatta görüntülenecektir."
+            }
+          }
+        },
         "app": {
           "language": {
             "title": "Dil",
@@ -90,7 +109,6 @@
           },
           "appearance": {
             "title": "Görünüm",
-            "subtitle": "Favori Renginizi Seçin",
             "themes": {
               "light": "Aydınlık",
               "dark": "Karanlık"

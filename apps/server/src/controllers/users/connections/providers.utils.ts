@@ -1,6 +1,6 @@
 import { type ObjectId } from "mongoose";
-import { Connection } from "@repo/database";
-import { UnauthorizedError } from "@repo/utils";
+import { UserConnection } from "@repo/database";
+import { UnauthorizedError } from "@repo/utils/exceptions";
 import {
   discord_getAccessToken,
   discord_getUserInfo,
@@ -8,9 +8,9 @@ import {
   github_getUserInfo,
   twitch_getAccessToken,
   twitch_getUserInfo,
-} from "../../../services/api.services";
+} from "@repo/services/api";
 
-export default class ConnectionsHelpers {
+export default class ConnectionsProviders {
   async discord(_id: ObjectId, code: string) {
     const response = await discord_getAccessToken(code);
 
@@ -24,7 +24,7 @@ export default class ConnectionsHelpers {
     if (!userInfo.data)
       throw new UnauthorizedError("Error connecting to Discord 2");
 
-    await Connection.save({
+    await UserConnection.connect({
       type: "discord",
       user: _id,
       data: userInfo.data,
@@ -48,7 +48,7 @@ export default class ConnectionsHelpers {
     if (!userInfo.data)
       throw new UnauthorizedError("Error connecting to Twitch 2");
 
-    await Connection.save({
+    await UserConnection.connect({
       type: "twitch",
       user: _id,
       data: {
@@ -78,7 +78,7 @@ export default class ConnectionsHelpers {
     if (!userInfo.data)
       throw new UnauthorizedError("Error connecting to Github 2");
 
-    await Connection.save({
+    await UserConnection.connect({
       type: "github",
       user: _id,
       data: {

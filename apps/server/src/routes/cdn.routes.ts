@@ -9,14 +9,18 @@ class Routes {
 
   constructor() {
     this.router.post(
-      "/upload-file",
-      auth,
+      "/upload/file",
       upload.fields([
         {
           name: "attachment",
         },
       ]),
-      this.controller.uploadFile,
+      this.controller.upload.file,
+    );
+    this.router.get(
+      "/download/file/:path/:fileName",
+      auth,
+      this.controller.download.file,
     );
   }
 }

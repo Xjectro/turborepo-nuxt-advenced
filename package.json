@@ -1,12 +1,12 @@
 {
-  "name": "turborepo-nuxt-advenced-starter",
+  "name": "Turborepo Nuxt Advanced",
   "private": true,
   "scripts": {
     "build": "turbo build",
     "dev": "dotenv -- turbo dev",
     "start": "dotenv -- turbo start",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md,vue,json,ejs,css}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md,vue,json,ejs,css,d.ts}\""
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
@@ -21,7 +21,7 @@
   "packageManager": "bun@1.1.29",
   "workspaces": [
     "apps/*",
-    "packages/*",
+    "packages/**/*",
     "layers/*"
   ],
   "dependencies": {

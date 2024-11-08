@@ -25,6 +25,7 @@
     "radix-vue": "^1.9.7",
     "vaul-vue": "^0.2.0",
     "vue": "latest",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "wavesurfer.js": "^7.8.8"
   }
 }

@@ -80,6 +80,25 @@
             }
           }
         },
+        "payment": {
+          "defaultCharge": {
+            "title": "Default Charge",
+            "buttons": {
+              "update": "Update"
+            },
+            "inputs": {
+              "charge": "Charge"
+            },
+            "messages": {
+              "success": "Charge updated successfully.",
+              "error": "An error occurred while updating the charge."
+            },
+            "alertDialog": {
+              "title": "Are You Sure?",
+              "description": "When you change the default pricing, herbs and other features added to your new library will display at that price by default."
+            }
+          }
+        },
         "app": {
           "language": {
             "title": "Language",
@@ -90,7 +109,6 @@
           },
           "appearance": {
             "title": "Appearance",
-            "subtitle": "Choose Your Favorite Color",
             "themes": {
               "light": "Light",
               "dark": "Dark"

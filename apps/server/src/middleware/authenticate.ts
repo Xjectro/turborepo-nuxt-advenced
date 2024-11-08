@@ -1,6 +1,9 @@
 import { exceptionResponse } from "../api";
 import { type Request, type Response, type NextFunction } from "express";
-import { UnauthorizedError, ForbiddenAccessError } from "@repo/utils";
+import {
+  UnauthorizedError,
+  ForbiddenAccessError,
+} from "@repo/utils/exceptions";
 
 interface CustomRequest extends Request {
   user?: any;
@@ -27,7 +30,7 @@ export const verifyRole = (roles: string[]) => {
     try {
       const user = req.user;
 
-      if (user && roles.includes(user.auth.role)) {
+      if (user && roles.includes(user.auth.roles)) {
         return next();
       }
 

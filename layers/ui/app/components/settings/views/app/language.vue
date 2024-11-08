@@ -3,7 +3,7 @@
     <template #start-area>
       <NuxtImg :src="item.flag" class="w-7 h-7 rounded-full" />
       <h5
-        class="text-base font-chakra-petch font-medium text-black dark:text-zinc-100"
+        class="text-base font-inter font-medium text-black dark:text-zinc-100"
       >
         {{ item.name }}
       </h5>

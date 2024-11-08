@@ -4,6 +4,7 @@
       :color="references.colors.find((c) => c.key == pageStore.ui.color)?.color"
     />
     <NuxtRouteAnnouncer />
+    <UiToastProvider />
     <div v-if="isLoaded">
       <ConfigProvider :dir="dir">
         <UiScrollAreaRoot class="w-full h-full">

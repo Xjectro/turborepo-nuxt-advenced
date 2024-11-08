@@ -1,14 +1,30 @@
 <template>
-  <SliderTrack v-bind="props" class="relative grow rounded-full h-[3px]">
-    <SliderRange
-      class="transition-all absolute bg-primary-500/50 rounded-full h-full"
-    />
+  <SliderTrack
+    v-bind="forwardedProps"
+    class="relative grow rounded-full h-[3px] bg-zinc-200 dark:bg-zinc-800"
+  >
+    <slot />
   </SliderTrack>
 </template>
 
 <script lang="ts" setup>
-import { SliderTrack, SliderRange } from "radix-vue";
+import { SliderTrack, useForwardProps } from "radix-vue";
 import type { SliderTrackProps } from "radix-vue";
+import type { HTMLAttributes } from "vue";
 
-const props = withDefaults(defineProps<SliderTrackProps>(), {});
+const props = defineProps<
+  SliderTrackProps & {
+    class?: HTMLAttributes["class"];
+    inset?: boolean;
+    value?: string;
+  }
+>();
+
+const delegatedProps = computed(() => {
+  const { class: _, ...delegated } = props;
+
+  return delegated;
+});
+
+const forwardedProps = useForwardProps(delegatedProps);
 </script>

@@ -1,6 +1,6 @@
-# 🚀 Turborepo Nuxt Advanced Starter
+# 🚀 Turborepo Nuxt Advanced
 
-Turborepo Nuxt Advanced Starter is a full-stack project using Turbo, TailwindCSS, TypeScript, and Bun as the package manager. This repository is configured with a monorepo setup using workspaces.
+Turborepo Nuxt Advanced is a full-stack project using Turbo, TailwindCSS, TypeScript, and Bun as the package manager. This repository is configured with a monorepo setup using workspaces.
 
 ## 🏗️ Project Structure
 
@@ -47,21 +47,15 @@ Turborepo Nuxt Advanced Starter is a full-stack project using Turbo, TailwindCSS
 - **📁 shx**: A portable Shell script commands tool.
 - **✅ Zod**: TypeScript-first schema validation for APIs.
 - **🌍 Axios**: A promise-based HTTP client for making requests.
-- **💻 Electron.js**: For building cross-platform desktop apps.
-- **🔒 Passport.js**: Authentication middleware for handling user authentication.
-- **🔌 Socket.IO**: For real-time, bidirectional communication between clients and servers.
-- **🔀 Nuxt.js Proxy**: Used to handle API requests and server communication through a proxy.
 
 ## 🧹 Env
 
 ```bash
+PROJECT_TITLE=""
 MONGODB_URI=""
 SESSION_SECRET=""
 SERVER_URI=""
 CLIENT_URI=""
-BUNNY_ACCESS_KEY=""
-BUNNY_STORAGE_NAME="xjectro"
-BUNNY_HOST_NAME="storage.bunnycdn.com"
 DISCORD_REDIRECT_URI="http://localhost:3000/callback/discord"
 DISCORD_CLIENT_ID=""
 DISCORD_CLIENT_SECRET=""
@@ -74,4 +68,13 @@ GITHUB_CLIENT_ID=""
 GITHUB_CLIENT_SECRET=""
 NODEMAILER_USER=""
 NODEMAILER_PASS=""
+AWS_ACCESS_KEY_ID=""
+AWS_SECRET_ACCESS_KEY=""
+AWS_REGION="eu-north-1"
+AWS_BUCKET_NAME="bucket" 
+MAX_FILE_SIZE=15728640
 ```
+
+## 🖼️ Image
+
+![image](https://github.com/user-attachments/assets/466b1a25-448b-4891-ac14-09c073b1c559)

@@ -19,8 +19,7 @@ export default class Socket {
     this.io.on("connection", (socket) => {
       console.log("New Connection", socket.id);
 
-      socket.on("/test", async ({ test }) =>
-        console.log(test)
+      socket.on("/test", async ({ ...args }) => console.log(args)
       );
     });
   }

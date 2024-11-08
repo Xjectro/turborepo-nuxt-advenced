@@ -1,0 +1,14 @@
+{
+  "name": "@repo/services/api",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "devDependencies": {
+    "@repo/typescript-config": "*"
+  },
+  "dependencies": {
+    "@types/axios": "^0.14.4",
+    "axios": "^1.7.7"
+  }
+}

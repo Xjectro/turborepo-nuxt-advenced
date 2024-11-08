@@ -1,9 +1,9 @@
 <template>
   <DialogTitle
-    v-bind="delegatedProps"
+    v-bind="forwaredProps"
     :class="
       $cn(
-        'flex items-center gap-2 text-lg font-chakra-petch font-bold text-black dark:text-white',
+        'flex items-center gap-2 text-lg font-inter font-bold text-black dark:text-white',
         props.class,
       )
     "
@@ -13,17 +13,13 @@
 </template>
 
 <script setup lang="ts">
-import { DialogTitle } from "radix-vue";
+import { DialogTitle, useForwardProps } from "radix-vue";
 import type { DialogTitleProps } from "radix-vue";
-import { type HtmlHTMLAttributes, computed } from "vue";
+import { type HtmlHTMLAttributes } from "vue";
 
 const props = defineProps<
   DialogTitleProps & { class?: HtmlHTMLAttributes["class"] }
 >();
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props;
-
-  return delegated;
-});
+const forwaredProps = useForwardProps(props);
 </script>

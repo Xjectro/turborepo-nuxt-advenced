@@ -1,14 +1,6 @@
 {
   "components": {
     "common": {
-      "navigationMenu": {
-        "widgets": {
-          "chatBox": {
-            "title": "Chat Box",
-            "description": "Add your channel's chat to your stream and make it look good while doing it."
-          }
-        }
-      },
       "header": {
         "end": {
           "login": "Login"
@@ -30,28 +22,13 @@
         }
       }
     },
-    "particles": {
-      "drawerItems": {
-        "common": {
-          "widgets": {
-            "chatBox": "Sohbet Kutusu"
-          }
-        }
-      }
-    },
     "shared": {
-      "user": {
+      "profile": {
         "dropdown": {
           "buttons": {
             "settings": "Settings",
+            "profile": "My Profile",
             "logout": "Logout"
-          }
-        }
-      },
-      "fontSize": {
-        "select": {
-          "buttons": {
-            "index": "Font Size"
           }
         }
       }

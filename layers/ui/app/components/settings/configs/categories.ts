@@ -6,6 +6,7 @@ import {
   Languages,
   Palette,
   Fingerprint,
+  Coins,
 } from "lucide-vue-next";
 
 import { reactive } from "vue";
@@ -48,6 +49,18 @@ export default reactive([
     ],
   },
   {
+    name: "payment.index",
+    required: false,
+    subCategories: [
+      {
+        name: "payment.defaultCharge",
+        to: "/payment/default-charge",
+        icon: Coins,
+        here: false,
+      },
+    ],
+  },
+  {
     name: "app.index",
     required: true,
     subCategories: [
@@ -77,4 +90,4 @@ export default reactive([
       },
     ],
   },
-])
+]);

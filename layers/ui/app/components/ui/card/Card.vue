@@ -13,7 +13,7 @@
   >
     <header v-if="hypertext" class="flex flex-col items-start gap-2">
       <h1
-        class="transition-all whitespace-nowrap text-base font-bold font-chakra-petch drop-shadow-dark-sm dark:drop-shadow-light-sm text-zinc-900 dark:text-white"
+        class="transition-all whitespace-nowrap text-base font-bold font-inter drop-shadow-dark-sm dark:drop-shadow-light-sm text-zinc-900 dark:text-white"
       >
         {{ label }}
       </h1>

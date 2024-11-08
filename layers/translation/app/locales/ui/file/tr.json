@@ -3,11 +3,21 @@
     "file": {
       "fileUpload": {
         "buttons": {
-          "select": "Resim Seç"
+          "select": "Select"
         },
         "dialog": {
           "items": {
-            "uploadImage": "Resim / Gif Yükle"
+            "upload": "Dosya Seç"
+          }
+        },
+        "toast": {
+          "error": {
+            "title": "Dosya Boyutu",
+            "description": "Dosya boyutun olması gerekenden çok büyük."
+          },
+          "success": {
+            "title": "Dosya",
+            "description": "Dosya başarıyla yüklendi."
           }
         }
       }

@@ -20,9 +20,9 @@ const props = defineProps({
 
 const values = ref(props.modelValue.split(""));
 
-const emit = defineEmits(["complate"]);
+const emits = defineEmits(["complate"]);
 
 function handleComplate(e: string[]) {
-  emit("complate", e.join(""));
+  emits("complate", e.join(""));
 }
 </script>

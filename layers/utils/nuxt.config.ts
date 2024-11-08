@@ -8,15 +8,15 @@ export default defineNuxtConfig({
   devServer: {
     port: 6001,
   },
-  modules: [
-    "@vueuse/nuxt",
-    "@pinia/nuxt",
-    "pinia-plugin-persistedstate",
-  ],
+  modules: ["@vueuse/nuxt", "@pinia/nuxt", "pinia-plugin-persistedstate"],
   runtimeConfig: {
     app: {
       serverURI: process.env.SERVER_URI,
-      title: "Turborepo Nuxt Advenced Starter",
+      title: process.env.PROJECT_TITLE,
+
+      root: {
+        maxFileSize: process.env.MAX_FILE_SIZE,
+      },
     },
     public: {
       discord: {

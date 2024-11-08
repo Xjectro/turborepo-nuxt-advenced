@@ -23,7 +23,7 @@ const props = defineProps({
 
 const value = ref(props.modelValue);
 
-const emit = defineEmits(["update:modelValue"]);
+const emits = defineEmits(["update:modelValue"]);
 
 function handleInput(e: Event) {
   const target = e.target as HTMLInputElement;
@@ -31,6 +31,6 @@ function handleInput(e: Event) {
 }
 
 watch(value, () => {
-  emit("update:modelValue", value.value);
+  emits("update:modelValue", value.value);
 });
 </script>

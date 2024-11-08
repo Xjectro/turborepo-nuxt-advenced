@@ -1,9 +1,10 @@
 import { type VariantProps, cva } from "class-variance-authority";
 
 export { default as Button } from "./Button.vue";
+export { default as LinkButton } from "./LinkButton.vue";
 
 export const buttonVariants = cva(
-  "transition-all inline-flex items-center font-chakra-petch font-medium pointer-events-auto cursor-pointer disabled:cursor-not-allowed",
+  "inline-flex items-center font-inter font-medium pointer-events-auto cursor-pointer disabled:cursor-not-allowed",
   {
     variants: {
       variant: {
@@ -25,4 +26,20 @@ export const buttonVariants = cva(
   },
 );
 
+export const linkButtonVariants = cva(
+  "text-sm font-inter font-medium hover:underline",
+  {
+    variants: {
+      variant: {
+        primary: "text-zinc-600 dark:text-zinc-500 hover:text-primary-500",
+        default: "text-black dark:text-zinc-100 hover:text-primary-500",
+      },
+    },
+    defaultVariants: {
+      variant: "primary",
+    },
+  },
+);
+
 export type ButtonVariants = VariantProps<typeof buttonVariants>;
+export type LinkButtonVariants = VariantProps<typeof linkButtonVariants>;

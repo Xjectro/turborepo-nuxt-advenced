@@ -11,7 +11,7 @@ const response = (res: Response, data: ResponseDTO) => {
   return res.status(data.code).json({
     success: data.success,
     message: data.message || "",
-    data: data.data || "",
+    data: data.data,
   });
 };
 

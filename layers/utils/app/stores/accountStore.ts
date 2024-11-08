@@ -1,11 +1,11 @@
 import { defineStore } from "pinia";
-import type { IAccountType, IConnectionType } from "../../types/types.account";
+import type { IUser, IConnection, IAccountStore } from "@repo/types/client";
 
 export const useAccountStore = defineStore({
   id: "accountStore",
-  state: () => ({
-    user: null as IAccountType | null,
-    connections: [] as IConnectionType[],
+  state: (): IAccountStore => ({
+    user: null,
+    connections: [],
   }),
   getters: {
     _getUser: (state) => state.user,
@@ -13,20 +13,20 @@ export const useAccountStore = defineStore({
   },
   actions: {
     setUser(user: Record<string, string>) {
-      this.user = { ...this.user, ...user } as IAccountType;
+      this.user = { ...this.user, ...user } as IUser;
     },
-    setConnections(connections: IConnectionType[]) {
+    setConnections(connections: IConnection[]) {
       this.connections = connections;
     },
     async initUser() {
-      const data = await $fetch("/api/users/@me", { method: "get" });
+      const data: any = await $fetch("/api/users/@me", { method: "get" });
 
       if (data?.success) {
         this.setUser(data.data);
       }
     },
     async initConnections() {
-      const data = await $fetch("/api/users/@me/connections", {
+      const data: any = await $fetch("/api/users/@me/connections", {
         method: "get",
       });
 

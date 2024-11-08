@@ -26,6 +26,7 @@
   "devDependencies": {
     "@vueuse/nuxt": "^11.1.0",
     "@pinia/nuxt": "^0.5.5",
+    "@repo/types/models": "*",
     "pinia-plugin-persistedstate": "^4.1.1"
   }
 }

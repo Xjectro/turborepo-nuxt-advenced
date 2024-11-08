@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import type { IPageStore } from "~~/types/types.page";
+import type { IPageStore } from "@repo/types/client";
 
 export const usePageStore = defineStore({
   id: "pageStore",
@@ -24,6 +24,8 @@ export const usePageStore = defineStore({
         theme: useColorMode()?.preference || "system",
         color: "blue",
       },
+      toasts: [],
+      user: null,
     };
   },
   persist: {
@@ -31,5 +33,9 @@ export const usePageStore = defineStore({
     pick: ["ui"],
   },
   getters: {},
-  actions: {},
+  actions: {
+    setUser(user: any) {
+      this.user = user;
+    },
+  },
 });

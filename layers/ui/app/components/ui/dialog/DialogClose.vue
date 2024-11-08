@@ -9,14 +9,14 @@
     "
     aria-label="Close"
   >
-    <IconX class="w-5 h-5" />
+    <IconX :size="18" />
   </DialogClose>
 </template>
 
 <script setup lang="ts">
 import { DialogClose } from "radix-vue";
 import type { DialogCloseProps } from "radix-vue";
-import { type HtmlHTMLAttributes, computed } from "vue";
+import { type HtmlHTMLAttributes } from "vue";
 
 const props = defineProps<
   DialogCloseProps & { class?: HtmlHTMLAttributes["class"] }

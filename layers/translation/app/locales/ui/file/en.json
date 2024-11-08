@@ -3,11 +3,21 @@
     "file": {
       "fileUpload": {
         "buttons": {
-          "select": "Select Image"
+          "select": "Select"
         },
         "dialog": {
           "items": {
-            "uploadImage": "Upload Image / Gif"
+            "upload": "Upload File"
+          }
+        },
+        "toast": {
+          "error": {
+            "title": "File Size",
+            "description": "Your file size is too large."
+          },
+          "success": {
+            "title": "File",
+            "description": "The file was uploaded successfully."
           }
         }
       }

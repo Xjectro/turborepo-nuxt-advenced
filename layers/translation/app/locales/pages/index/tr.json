@@ -2,10 +2,6 @@
   "pages": {
     "index": {
       "head": {
-        "settings": {
-          "title": "Ayarlar",
-          "description": "Ayarlarınızı buradan değiştirebilirsiniz"
-        },
         "auth": {
           "title": "Güvenlik",
           "description": "Buradan kayıt olabilir veya giriş yapabilirsiniz"

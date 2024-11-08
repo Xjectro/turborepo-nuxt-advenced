@@ -6,7 +6,7 @@
     :disabled="disabled"
     @click="onInteraction"
   >
-    <IconLoader v-if="props.loading" class="w-6 h-6 animate-spin" />
+    <IconLoader v-if="props.loading" :size="20" class="animate-spin" />
     <slot v-else />
   </Primitive>
 </template>
@@ -16,7 +16,7 @@ import type { HTMLAttributes } from "vue";
 import { type ButtonVariants, buttonVariants } from ".";
 import { Primitive, type PrimitiveProps } from "radix-vue";
 
-const emit = defineEmits(["interaction"]);
+const emits = defineEmits(["interaction"]);
 
 interface Props extends PrimitiveProps {
   variant?: ButtonVariants["variant"];
@@ -37,11 +37,11 @@ const props = withDefaults(defineProps<Props>(), {
   loading: false,
 });
 
-function onInteraction() {
+const onInteraction = useThrottleFn(() => {
   if (props.to) {
     navigateTo(props.to);
   } else {
-    emit("interaction");
+    emits("interaction");
   }
-}
+}, 200);
 </script>

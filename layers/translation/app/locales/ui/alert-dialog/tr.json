@@ -1,0 +1,10 @@
+{
+  "ui": {
+    "alertDialog": {
+      "buttons": {
+        "action": "Devam Et",
+        "cancel": "İptal Et"
+      }
+    }
+  }
+}

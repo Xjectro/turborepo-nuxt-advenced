@@ -3,8 +3,7 @@
 </template>
 
 <script lang="ts" setup>
-const { route } = useImports();
-const { pageStore } = useUi();
+const { route, pageStore } = useImports();
 
 const type = route.params.type as string;
 const types = ["discord", "github", "twitch"];

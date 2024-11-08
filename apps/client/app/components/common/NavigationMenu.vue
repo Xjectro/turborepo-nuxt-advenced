@@ -5,14 +5,18 @@ const currentTrigger = ref("");
 <template>
   <UiNavigationMenuRoot v-model="currentTrigger">
     <UiNavigationMenuItem>
-      <UiNavigationMenuTrigger>Widgets</UiNavigationMenuTrigger>
+      <UiNavigationMenuTrigger>Test</UiNavigationMenuTrigger>
       <UiNavigationMenuContent>
-        <UiNavigationMenuListItem href="/auth/login" title="test">
-          test description
-        </UiNavigationMenuListItem>
+          <UiNavigationMenuListItem
+            href="/"
+            title="
+             test title
+            "
+          >
+test description
+          </UiNavigationMenuListItem>
       </UiNavigationMenuContent>
     </UiNavigationMenuItem>
-
     <UiNavigationMenuIndicator />
   </UiNavigationMenuRoot>
 </template>

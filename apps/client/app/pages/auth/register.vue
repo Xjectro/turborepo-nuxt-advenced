@@ -73,7 +73,7 @@ const layout = reactive({
   },
   button: {
     loaded: true,
-    disabled: fase,
+    disabled: false,
   },
 });
 

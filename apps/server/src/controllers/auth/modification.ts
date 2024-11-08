@@ -1,5 +1,5 @@
 import { Auth } from "@repo/database";
-import { UnauthorizedError } from "@repo/utils";
+import { UnauthorizedError } from "@repo/utils/exceptions";
 import { exceptionResponse, response } from "../../api";
 import { type Request, type Response } from "express";
 

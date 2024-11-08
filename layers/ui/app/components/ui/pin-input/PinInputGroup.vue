@@ -9,7 +9,7 @@
 
 <script lang="ts" setup>
 import { Primitive, type PrimitiveProps, useForwardProps } from "radix-vue";
-import { type HTMLAttributes, computed } from "vue";
+import { type HTMLAttributes } from "vue";
 
 const props = defineProps<
   PrimitiveProps & { class?: HTMLAttributes["class"] }

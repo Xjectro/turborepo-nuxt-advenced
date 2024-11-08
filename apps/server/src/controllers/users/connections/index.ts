@@ -1,5 +1,4 @@
-import { NotFoundError } from "@repo/utils";
-import { Connection } from "@repo/database";
+import { UserConnection } from "@repo/database";
 import ConnectionsProviders from "./providers.utils";
 import { type Request, type Response } from "express";
 import { exceptionResponse, response } from "../../../api";
@@ -11,7 +10,7 @@ export default class UsersConnectionsController {
     try {
       const code = req.query.code as string;
 
-      const data = await this.providers.discord(req.user._id, code);
+      const data = await this.providers.discord(req.user?._id, code);
 
       response(res, {
         code: 201,
@@ -45,7 +44,7 @@ export default class UsersConnectionsController {
     try {
       const code = req.query.code as string;
 
-      const data = await this.providers.github(req.user._id, code);
+      const data = await this.providers.github(req.user?._id, code);
 
       response(res, {
         code: 201,
@@ -62,14 +61,7 @@ export default class UsersConnectionsController {
     try {
       const { type } = req.query;
 
-      const connection = await Connection.findOne({
-        user: req.user._id,
-        type,
-      });
-
-      if (!connection) throw new NotFoundError(`No link named ${type} found`);
-
-      await connection.deleteOne();
+      await UserConnection.disconnect({ user: req.user?._id, type });
 
       response(res, {
         code: 201,

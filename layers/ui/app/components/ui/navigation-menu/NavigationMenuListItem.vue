@@ -1,11 +1,3 @@
-<script setup lang="ts">
-import { NavigationMenuLink } from "radix-vue";
-
-const props = defineProps({
-  title: String,
-});
-</script>
-
 <template>
   <li>
     <NavigationMenuLink as-child>
@@ -14,7 +6,7 @@ const props = defineProps({
         class="block select-none rounded-[6px] p-3 text-[15px] leading-none no-underline outline-none transition-colors hover:bg-zinc-400/15 dark:hover:bg-zinc-600/20"
       >
         <div
-          class="mb-[5px] leading-[1.2] font-chakra-petch font-medium text-white dark:text-white"
+          class="mb-[5px] leading-[1.2] font-inter font-medium text-white dark:text-white"
         >
           {{ props.title }}
         </div>
@@ -27,3 +19,11 @@ const props = defineProps({
     </NavigationMenuLink>
   </li>
 </template>
+
+<script setup lang="ts">
+import { NavigationMenuLink } from "radix-vue";
+
+const props = defineProps({
+  title: String,
+});
+</script>

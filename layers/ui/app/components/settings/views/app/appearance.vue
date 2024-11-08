@@ -3,7 +3,7 @@
     <button
       v-for="(item, index) in references.themes"
       :key="index"
-      class="transition-all relative flex flex-col items-center gap-2 text-base font-chakra-petch font-medium text-black dark:text-zinc-100"
+      class="transition-all relative flex flex-col items-center gap-2 text-base font-inter font-medium text-black dark:text-zinc-100"
       @click="setTheme(item.key)"
     >
       <div
@@ -32,16 +32,13 @@
       {{ t(`ui.settings.views.app.appearance.themes.${item.key}`) }}
     </button>
   </div>
-  <DashboardContentSubhead
-    :label="t('ui.settings.views.app.appearance.subtitle')"
-  />
   <UiDivider />
   <!-- Secondary Theme -->
   <div class="flex flex-wrap items-center gap-10">
     <button
       v-for="(item, index) in references.colors"
       :key="index"
-      class="transition-all relative flex flex-col items-center gap-2 text-base group font-chakra-petch font-medium text-black dark:text-zinc-100"
+      class="transition-all relative flex flex-col items-center gap-2 text-base group font-inter font-medium text-black dark:text-zinc-100"
       @click="setColorMode(item.key)"
     >
       <div

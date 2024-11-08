@@ -1,0 +1,13 @@
+{
+  "name": "@repo/types/client",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./src/index.ts",
+  "devDependencies": {
+    "@repo/typescript-config": "*"
+  },
+  "dependencies": {
+    "@types/mongoose": "^5.11.97",
+    "mongoose": "^8.8.0"
+  }
+}
